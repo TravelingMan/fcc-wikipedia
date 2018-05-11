@@ -40,18 +40,21 @@ function getArticlesFromJson(rawJson) {
 }
 
 function createArticles(title, content, link) {
+  const section = document.getElementById("results");
+
   // Tags
-  let section = document.getElementById("results");
   let divEl = document.createElement("div");
-  let titleEl = document.createElement("h3");
+  let titleEl = document.createElement("strong");
   let contentEl = document.createElement("p");
+  let linkEL = document.createElement("a");
 
   // Text
-  let 
+  let titleText = document.createTextNode(title);
+  let contentText = document.createTextNode(content);
   
   // Add to the DOM
-  divEl.appendChild(titleEl).appendChild(title);
-  divEl.appendChild(contentEl).appendChild(content);
+  divEl.appendChild(titleEl).appendChild(titleText);
+  divEl.appendChild(contentEl).appendChild(contentText);
 
-  results.appendChild(divEl);
+  section.appendChild(divEl);
 }
