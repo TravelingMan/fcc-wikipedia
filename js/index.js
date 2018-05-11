@@ -51,10 +51,15 @@ function createArticles(title, content, link) {
   // Text
   let titleText = document.createTextNode(title);
   let contentText = document.createTextNode(content);
+
+  // Set link
+  titleEl.appencdChild(linkEl);
+  titleEl.href = link;
   
-  // Add to the DOM
+  // Node layout
   divEl.appendChild(titleEl).appendChild(titleText);
   divEl.appendChild(contentEl).appendChild(contentText);
 
+  // Push to DOM
   section.appendChild(divEl);
 }
