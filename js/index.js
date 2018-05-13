@@ -43,18 +43,18 @@ function createArticles(title, content, link) {
   let divEl = document.createElement("div");
   let titleEl = document.createElement("strong");
   let contentEl = document.createElement("p");
-  let linkEL = document.createElement("a");
+  let linkEl = document.createElement("a");
 
-  // Text
-  let titleText = document.createTextNode(title);
+  // Text  
   let contentText = document.createTextNode(content);
 
   // Set link
-  titleEl.appendChild(linkEl);
-  titleEl.href = link;
-  
+  linkEl.href = link;
+  linkEl.innerHTML = title;  
+
   // Node layout
-  divEl.appendChild(titleEl).appendChild(titleText);
+  titleEl.appendChild(linkEl);
+  divEl.appendChild(titleEl).appendChild(linkEl);
   divEl.appendChild(contentEl).appendChild(contentText);
 
   // Push to DOM
